@@ -3,7 +3,7 @@ jQuery.fn.typeWord = function (options) {
     var settings;
 
     $.extend(settings = {
-        words: ['I am a minimalist.', 'I am not a designer.', 'I am not a cowboy.', 'I am possibly an alien.', 'I am not a grumpy cat.', 'I am an advocate of actions speak louder than words!', 'I am possibly a robot.'],
+        words: [],
         reWrites: 1,
         deleteSpeed: 50,
         addSpeed: 400,
@@ -46,10 +46,8 @@ jQuery.fn.typeWord = function (options) {
             }
             newWordLen = word.length;
             newLen = 0;
-            console.log('delay start adding words ' + settings.delayStartAddingWords);
             var add = setTimeout(addChar, settings.delayStartAddingWords);
         } else {
-            console.log('delete letter speed ' + settings.deleteLetterSpeed);
             remove = setTimeout(removeChar, settings.deleteLetterSpeed);
         }
     }
@@ -63,12 +61,10 @@ jQuery.fn.typeWord = function (options) {
             abortTimer();
             wordLen = changedMe.text().length;
             if (doThisMany > 1) {
-                console.log('start Deleting word delay' + settings.delayStartDeletingWord);
                 doThisMany--;
                 remove = setTimeout(removeChar, settings.delayStartDeletingWord);
             }
         } else {
-            console.log('add letter speed ' + settings.addLetterSpeed);
             add = setTimeout(addChar, settings.addLetterSpeed);
         }
     }
