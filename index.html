@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Typeword Example</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="typeword.js"></script>
+</head>
+<body>
+    <span id="what-not">Just another day.</span>
+<script>
+    $('#what-not').typeWord({
+		reWrites: 1,
+        deleteSpeed: 50,
+        addSpeed: 400,
+        startDelay: 3000,
+        deleteLetterSpeed: 60,
+        delayStartAddingWords: 400,
+        addLetterSpeed: 180,
+        delayStartDeletingWord: 1500,
+        words: ['I love my job!', 'I hate my job!','Life goes on!']
+    });
+</script>
+</body>
+</html>
